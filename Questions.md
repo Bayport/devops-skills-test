@@ -1,3 +1,7 @@
+# Welcome
+Welcome to Bayport's DevOps skills assessment.
+Please fork this repository and answer any questions on this markdown document.
+
 # Linux
 * What is the command to list the contents of a direcory, line by line and ordered by size ascending in human readable format?
 * How would you add a DNS server to a network interface in Linux?
