@@ -1,4 +1,8 @@
+
 # Welcome
+
+![Bayport](/Bayport_Logo.png)
+
 Welcome to Bayport's DevOps skills assessment.
 Please fork this repository and answer any questions on this markdown document.
 
