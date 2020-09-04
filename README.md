@@ -53,4 +53,5 @@ Please fork this repository and answer any questions on this markdown document.
 
 # General
 * How would you ensure any change made to this Dockerfile is source controlled, approved, tested and deployed. Explain which tools you will use as if this was going into a production environment.
+####  I will use a ci/cd pipeline with a devops tool like jenkins or gitlab. I will create branches for different phases for the developement, uat and production. all pull request will have to be approved before it can be merged to the next phase
 * Commit and push your changes.
