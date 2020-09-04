@@ -16,6 +16,15 @@ Please fork this repository and answer any questions on this markdown document.
 * How would you check for SELinux related errors?
 #### error can be seen in /var/log/messages
 * Write the commands to add 30GB disk space to a logical volume named "docker" that belongs to a logical group named "docker-group".
+####  Create new partition using fdisk utility
+####  fdisk /dev/sdb
+####  p
+####  n
+####  Enter at for partion and last to use the full size or specify +30G
+####  partprobe
+####  pvcreate /dev/sdb1
+####  vgs
+####  lvextend -l +100%FREE -r /dev/mapper/docker-group /dev/sdb1
 * In the root of this repository, create a Bash script called "listit.sh", when executed, this script must do the following (in order):
     * Create a file called directories.list that contains the directory names only of the current directory.
     * Add a line at the beginning of the directories.list file that reads "line one's line".
