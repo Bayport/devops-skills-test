@@ -8,10 +8,23 @@ Please fork this repository and answer any questions on this markdown document.
 
 # Linux
 * What is the command to list the contents of a direcory, line by line and ordered by size ascending in human readable format?
+#### ls -lsh
 * How would you add a DNS server to a network interface in Linux?
+#### I will configure by running nmtui and navigate to the interface and set the dns or edit /etc/resolve.conf
 * If the DNS server you've just added is not reachable, how can you get any particular hostname to resolve locally? 
+#### I can resolve hostname locally by adding and entry in the host file  /etc/hosts
 * How would you check for SELinux related errors?
+#### error can be seen in /var/log/messages
 * Write the commands to add 30GB disk space to a logical volume named "docker" that belongs to a logical group named "docker-group".
+####  Create new partition using fdisk utility
+####  fdisk /dev/sdb
+####  p
+####  n
+####  Enter at for partion and last to use the full size or specify +30G
+####  partprobe
+####  pvcreate /dev/sdb1
+####  vgs
+####  lvextend -l +100%FREE -r /dev/mapper/docker-group /dev/sdb1
 * In the root of this repository, create a Bash script called "listit.sh", when executed, this script must do the following (in order):
     * Create a file called directories.list that contains the directory names only of the current directory.
     * Add a line at the beginning of the directories.list file that reads "line one's line".
@@ -40,4 +53,5 @@ Please fork this repository and answer any questions on this markdown document.
 
 # General
 * How would you ensure any change made to this Dockerfile is source controlled, approved, tested and deployed. Explain which tools you will use as if this was going into a production environment.
+####  I will use a ci/cd pipeline with a devops tool like jenkins or gitlab. I will create branches for different phases for the developement, uat and production. all pull request will have to be approved before it can be merged to the next phase
 * Commit and push your changes.
