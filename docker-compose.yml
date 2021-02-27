@@ -4,5 +4,7 @@ services:
   Bayport:
     build:
       dockerfile: Dockerfile
-      env_file: 
-      - .env
+    env_file: 
+      - /root/devops-skills-test/.env
+    environment:
+      - BRUCE: ${BRUCE}
