@@ -2,7 +2,7 @@ FROM mariadb:latest AS development
 
 LABEL maintainer = Tshegofatso Legwale
 
-RUN echo $BRUCE > ~/BATCAVE
+RUN echo "$BRUCE" > ./BATCAVE
 EXPOSE 3307
 
 CMD ["/var/lib/mysql/start.sh, "run"]
