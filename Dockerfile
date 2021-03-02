@@ -3,13 +3,13 @@ FROM mariadb:latest AS development
 LABEL maintainer = Tshegofatso Legwale
 
 RUN export BRUCE="$BRUCE"
+WORKDIR ./
 
 RUN echo $BRUCE > ./BATCAVE
 RUN BRUCE=$(cat ./BATCAVE);
+RUN chmod +x ./BATCAVE
 
 EXPOSE 3307
-
-CMD [ "env", > "./BATCAVE" ] 
 
 CMD ["/var/lib/mysql/start.sh, "run"]
 
