@@ -10,6 +10,7 @@ services:
     environment:
       BRUCE: ${BRUCE}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_TCP_PORT: ${MYSQL_TCP_PORT}
     volumes:
     - ./docker/mysql/scripts:/docker-entrypoint-initdb.d
     - ./mysql_data:/var/lib/mysql
