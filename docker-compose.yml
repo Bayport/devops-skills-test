@@ -9,3 +9,9 @@ services:
       - /home/ubuntu/devops-skills-test/.env
     environment:
       BRUCE: ${BRUCE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+    - ./docker/mysql/scripts:/docker-entrypoint-initdb.d
+    - ./mysql_data:/var/lib/mysql
+    ports:
+    - 3307:3307/tcp
