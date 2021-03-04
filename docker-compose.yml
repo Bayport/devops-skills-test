@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
 
     env_file: 
-      - /home/ubuntu/devops-skills-test/.env
+      - ./.env
 
     environment:
     - 'BRUCE:${BRUCE}'
