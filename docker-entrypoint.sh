@@ -1,5 +1,6 @@
     if [ ! -d "$DATADIR/mysql" ]; then
         //Some other logic here
+        MYSQL_ROOT_PASSWORD="$MYSQL_ROOT_PASSWORD"
 
         for f in /docker-entrypoint-initdb.d/*; do
             case "$f" in
