@@ -38,6 +38,18 @@ Please use this template to create your own repository of this test and share yo
 * Change your Bash script to start the conainer using the root password from the "secret" file.
 * Commit and push your changes.
 
+# OpenShift / OKD
+For the questions below, please make use of the OpenShift CLI (oc).
+* Write the command used to login to a remote OpenShift cluster.
+* Write the command to add the "cluster-admin" cluster role to a user called "clark".
+* Write the command used to list all pods in the "smallville" project (namespace).
+* Write the command to scale an application (deployment config) called "dailyplanet" to 2 pods.
+* Write the command to gain remote shell access to a pod called "lex" in the "smallville" project (namespace).
+* Write the command to export a secret called "loislane" in JSon format, the secret is in the "dailyplanet" project (namespace).
+* Add a file called "Krypton" (in YAML format) to this repo that contains the resource defintion for a Persistent Volume Claim with the following properties:
+    * Points to a Persistent Volume called "zod".
+    * Requests 5GB of storage.
+    * The volume can be mounted as read-write by more than one node.
 # General
 * How would you ensure any change made to this Dockerfile is source controlled, approved, tested and deployed. Explain which tools you will use as if this was going into a production environment.
 * Commit and push your changes.
