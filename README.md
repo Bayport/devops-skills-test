@@ -4,7 +4,7 @@
 ![Bayport](/Bayport_Logo.png)
 
 Welcome to Bayport's DevOps skills assessment.
-Please fork this repository and answer any questions on this markdown document.
+Please use this template to create your own repository of this test and share your repo with us. Please answer all questions on this assessment.
 
 # Linux
 * What is the command to list the contents of a direcory, line by line and ordered by size ascending in human readable format?
