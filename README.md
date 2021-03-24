@@ -39,7 +39,7 @@ Please use this template to create your own repository of this test and share yo
 * Commit and push your changes.
 
 # OpenShift / OKD
-For the questions below, please make use of the OpenShift CLI (oc).
+For the questions below, please make use of the OpenShift CLI (oc) where applicable.
 * Write the command used to login to a remote OpenShift cluster.
 * Write the command to add the "cluster-admin" cluster role to a user called "clark".
 * Write the command used to list all pods in the "smallville" project (namespace).
