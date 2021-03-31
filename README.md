@@ -5,7 +5,10 @@
 
 Welcome to Bayport's DevOps skills assessment.
 Please use this template to create your own repository of this test and share your repo with us. Please answer all questions on this assessment.
-
+# General Instructions
+* Click on the "Use This Template" button. This will allow you to create a copy of this repository on your own GitHub account.
+* Give your repository a name. Keep the repository public as you'll need to share it with us to review.
+* When you've completed all the questions, share your repository with us by sending us the repo's URL.
 # Linux
 * What is the command to list the contents of a direcory, line by line and ordered by size ascending in human readable format?
 * How would you add a DNS server to a network interface in Linux?
