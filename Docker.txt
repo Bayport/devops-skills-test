@@ -1,0 +1,106 @@
+Docker--
+1- In the root of this repository, create a Dockerfile that is based on the latest mariadb image.
+Expose port 3307.
+Define an evironment variable called BRUCE with a value of WAYNE.
+Run a command that will output the value from BRUCE into a file called BATCAVE in the root directory of the container.
+
+Answer-
+
+
+FROM mariadb:latest
+
+ARG BRUCE=WAYNE
+
+ENV var_name = $BRUCE
+
+touch ./BATCAVE
+echo $var_name > ./BATCAVE
+
+EXPOSE 3307
+
+
+
+
+2-Create a Bash script in the root of this repository called FLY.sh that will do the following:
+Install Docker if it is not yet installed.
+Ensure the installed version of Docker is the latest version available.
+Start a container using the image you've craeted above with your Dockerfile - this container must run as follows:
+It must be named ALFRED.
+It must mount /var/lib/mysql to the host operating system to /var/lib/mysql.
+It must mount /BATCAVE to the host operating system.
+Checks whether a container exists called ALFRED and if it does, removes an recreates it.
+Create a schema in the database called "wayneindustries" with one table in it called "fox" with columns "ID" and "Name".
+Insert an entry with ID "50" and Name "BATMOBILE".
+
+Answer-
+
+#!/bin/bash
+
+#docker_installation
+
+if [ ! -x /var/lib/docker ]; then
+      
+        echo "INSTALLING docker"
+echo
+echo    #install docker dependencies 
+         apt install apt-transport-https ca-certificates curl software-properties-common -y
+echo
+echo   #add docker’s official GPG key
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo
+echo
+        #set up the stable repository.
+	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"	
+echo
+echo
+	#update the packages
+	apt update -y
+
+echo
+echo
+	#checks install from the Docker repo instead of the default Ubuntu repo:
+	apt-cache policy docker-ce 
+echo
+echo
+
+	#installing dcoker through docker-ce
+	apt install docker-ce -y 
+echo
+echo
+	#installing docker-compose
+	apt install docker-compose -y
+echo
+echo
+       #adds your username to the docker group
+	usermod -aG docker ${USER}
+       
+       echo "docker successfully installed"
+
+echo
+echo
+
+else
+
+echo
+echo
+        echo "DOCKER ALREADY INSTALLED"
+echo
+echo
+
+fi
+
+#docker_installation
+
+
+# Build Maria DB image
+$ docker build --rm=true -t testmariodb/mariadb
+
+$ docker pull mariadb
+
+$ docker run -d --name ALFRED \
+-p 33061:3307 \
+-v /var/lib/mysql:/var/lib/mysql \
+-v /BATCAVE:/BATCAVE \
+-e MYSQL_ROOT_PASSWORD=thisisadatabasepassword123456789! \
+-e MYSQL_DATABASE=dbtest \
+mariadb
